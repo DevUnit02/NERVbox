@@ -84,6 +84,13 @@ locale-gen                                    # Generar locales
 localectl set-locale LANG=es_MX.UTF-8         # Configurar idioma
 localectl set-keymap es                       # Teclado en consola
 localectl set-x11-keymap es                   # Teclado en GUI
+
+#Alternativa
+
+locale-gen
+echo "LANG=es_ES.UTF-8" > /etc/locale.conf
+echo "KEYMAP=es" > /etc/vconsole.conf      # Para consola
+localectl set-x11-keymap es                # Para entorno gráfico
 ```
 
 
