@@ -1,0 +1,83 @@
+{
+
+  "height": 30,
+  "modules-left": [
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "wireplumber",
+    "backlight",
+    "network",
+    "cpu",
+    "memory",
+    "battery",
+    "clock"
+  ],
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 35,
+    "rewrite": {
+      "": "Hyprland"
+    },
+    "separate-outputs": true
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "active": " "
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 5,  // 5 workspaces by default on every monitor
+      "HDMI-A-1": 3  // but only three on HDMI-A-1
+    }
+  },
+  "clock": {
+  "format": "{:%H:%M}",                    // Muestra hora actual
+  "format-time": "%H:%M",                // Formato 24 h (hora:minuto)
+  "format-alt": "{:%d-%m-%Y}",           // Fecha alternativa al hacer clic
+  "tooltip-format": "<big>{:%A %d de %B}</big>\n<tt><small>{calendar}</small></tt>",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "interval": 1
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true
+  },
+  "memory": {
+    "format": "{}% "
+  },
+  "network": {
+  "format": "{icon}",
+  "format-icons": {
+  "connected": "",    // Wi-Fi clásico (puede quedar bien con color neón)
+  "disconnected": "", // Advertencia (tipo alerta A.T. field)
+  "ethernet": "",      // Nodo/contenedor (como interfaz de MAGI)
+  "vpn": "⬡"            // AT Field (VPN)
+  },
+  "tooltip": true,
+  "tooltip-format": "⬇️ {bandwidthDownBytes} | ⬆️ {bandwidthUpBytes}",
+  "on-click": "nm-connection-editor"
+  },
+  "wireplumber": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+}
+
